@@ -1,0 +1,17 @@
+@model Factory.Models.Machine
+
+
+
+<h2>Purchase One of Our Machines</h2>
+
+<div class="content_box">
+  @Html.DisplayFor(model => model.Name): @Model.Name<br />
+  @Html.DisplayFor(model => model.Description): @Model.Description<br />
+
+  <div class="content_box">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value="Purchase" />
+    }
+  </div>
+</div>

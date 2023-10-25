@@ -1,0 +1,22 @@
+@using Factory.Models
+@model Factory.Models.Machine
+
+<h1>Sell Your Machine</h1>
+
+<div class="content_box">
+  @using (Html.BeginForm())
+  {
+    <br>
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)
+    <br>
+
+    @Html.LabelFor(m => m.Description)
+    @Html.TextBoxFor(m => m.Description)
+    <br>
+    <br>
+    <input type="submit" value="Sell Your Machine" class="btn btn-default" />
+    <br>
+    <br>
+  }
+</div>

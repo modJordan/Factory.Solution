@@ -1,0 +1,16 @@
+@using Factory.Models
+
+<br/>
+<br/>
+<br/>
+<div class="title">All Engineers</div>
+
+<div class="content_box">
+<div class="statement">
+    @foreach (var engineer in Model)
+    {
+      <li class="bold">@Html.ActionLink($"{engineer.FirstName} {engineer.LastName}", "Details", new { id = engineer.EngineerId }) </li>
+      
+    }
+</div>
+</div>

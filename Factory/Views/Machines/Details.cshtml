@@ -1,0 +1,34 @@
+@using Factory.Models
+@model Factory.Models.Machine
+
+<h1>@Model.Name Details</h1>
+<div class="content_box">
+  <h3 class="bold"> @Html.DisplayFor(m => m.Name)</h3>
+  <hr />
+  <h3>@Html.DisplayNameFor(m => m.Description): @Html.DisplayFor(m => m.Description)</h3>
+
+  @if (@Model.JoinEntities.Count == 0)
+  {
+    <p>No Engineers Assigned</p>
+    <br />
+    <br />
+  }
+  else
+  {
+    <div class="content_box">
+      <h3>Engineers Assigned to this Machine</h3>
+      @foreach (EngineerMachine join in Model.JoinEntities)
+      {
+        <p class="bold"> @join.Engineer.FirstName @join.Engineer.LastName</p>
+        <p>Specialty: @join.Engineer.Specialty</p>
+        <br />
+        <br />
+      }
+    </div>
+
+  }
+  <p><a href="@Url.ActionLink("Index", "Engineers")">All Engineers</a></p>
+  <p><a href="@Url.ActionLink("Create", "Engineers")">Apply to be an Engineer for this Machine</a></p>
+  <br />
+  <br />
+</div>

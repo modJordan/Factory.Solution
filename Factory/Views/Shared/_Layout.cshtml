@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@600&family=Galada&display=swap"
+    rel="stylesheet">
+  <title>Dr. Sillystringz's Factory</title>
+  <link rel="stylesheet" href="~/css/styles.css">
+  <link rel="javascript" href="~/js/scripts.js">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-bg"></div>
+    <ul>
+      <li><a href="@Url.ActionLink("Index", "Engineers")">All Engineers</a></li>
+      <li><a href="@Url.ActionLink("Create", "Engineers")">Apply</a></li>
+      <li><a href="@Url.ActionLink("Index", "Machines")">All Machines</a></li>
+      <li><a href="@Url.ActionLink("Create", "Machines")">Sell Your Machine</a></li>
+      <li><a href="@Url.ActionLink("Index", "Home")">Home</a></li>
+    </ul>
+  </nav>
+  @RenderBody()
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+@using Factory.Models
+@model Factory.Models.Machine
+
+<h1>Edit</h1>
+
+<div class="formMiniBorder">
+
+<h4>Edit this Machine @Html.DisplayFor(m => m.Name)</h4>
+
+@using (@Html.BeginForm())
+{
+  <div class="form-group">
+        @Html.LabelFor(model => model.Name, "Machine Name")
+        @Html.EditorFor(model => model.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, "Machine Description")
+        @Html.EditorFor(model => model.Description)
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-primary" />
+    </div>
+}
+</div>

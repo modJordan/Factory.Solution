@@ -1,0 +1,19 @@
+@model Factory.Models.Engineer
+
+<h2>Add a Machine</h2>
+
+<div class="conten_box">
+<h4>Add a Machine to this Engineer: @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model =>
+    model.LastName)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.EngineerId)
+
+    @Html.Label("Select Machine")
+    @Html.DropDownList("MachineId", (SelectList)ViewBag.MachineId, "Select a Machine")
+
+    <input type="submit" value="Save" class="submit"/>
+}
+
+</div>

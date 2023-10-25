@@ -1,0 +1,110 @@
+@using Microsoft.AspNetCore.Mvc;
+@using Factory.Models;
+@using System.Collections.Generic;
+@using System.Linq;
+
+
+@{
+  ViewData["Title"] = "Home Page";
+}
+<div class="hero">
+  <p class="subtitle">Industrial Strings</p>
+  <p class="title">Welcome</p>
+</div>
+<div class="container">
+  <div class="content_box">
+    <div class="landingwrapper">
+      <p>Welcome to Industrial Strings: <br> Dr. Sillystringz's Mastery Unveiled</p>
+    </div>
+    <hr />
+    <div class="statement">
+      Nestled in Portland, Oregon, the historic heart of Industrial Strings pulsates with the vision of Dr.
+      Sillystringz.
+      Established in 1908, our factory has since been a sanctuary where vintage luxury meets modern precision, thanks to
+      our
+      unparalleled collection of machines and the masterminds behind them.
+    </div>
+  </div>
+  <div class="content_box">
+    <div class="landingwrapper">
+      Machines with a Tale
+    </div>
+    <hr />
+    <div class="statement">
+      Our workshop is home to an ensemble of time-tested manufacturing equipment. From the "StringMaster 1909", our
+      oldest
+      relic still in operation, to the sophisticated "SonicStrum Analyzer", each machine is a testament to our
+      commitment
+      to
+      quality and the rich history we uphold.
+    </div>
+  </div>
+
+  <div class="content_box">
+    <div class="landingwrapper">
+      Meet Our Engineers
+    </div>
+    <hr />
+    <div class="statement">
+      <span class="bold">
+        Dylan Keats:
+      </span>
+      <hr> Our head engineer, with over 30 years in the realm of string craftsmanship. A protege of Dr. Sillystringz
+      himself, Dylan's touch has mended instruments for elite brands like Strumford & Co. and Violinique. <br> <br>
+
+      <span class="bold">Serena Pluck:</span>
+      <hr>
+      Known for her meticulous attention to detail, Serena specializes in the Banjomatic brand and has innovated
+      numerous techniques that are now industry standards. <br>
+      <br>
+      <span class="bold">Elias Chordwell:</span>
+      <hr> The newest addition to our team, Elias brings a fresh perspective, infusing modern tech insights
+      with
+      our vintage processes. A genius in machine maintenance, he's the mind behind the smooth operation of our cherished
+      antiques.
+    </div>
+  </div>
+
+  <div class="content_box">
+    <div class="landingwrapper">
+      Unrivaled Legacy in Every String
+    </div>
+    <hr />
+    <div class="statement">
+      Behind each string we craft lies a symphony of expert hands, historic machines, and the spirit of Dr.
+      Sillystringz.
+      Whether you seek the finest strings or need your instrument restored to its former glory, Industrial Strings is
+      your
+      destination.
+
+
+      Dive deeper into our rich history, explore our machine gallery, and meet the talented team that keeps the legacy
+      alive.</p>
+    </div>
+  </div>
+
+</div>
+<hr />
+<div class="container">
+  <div class="content_box">
+    <div class="landingwrapper">
+      We specialize in repairing the following machines:
+    </div>
+    <div class="statement">
+      @if (Model["machine"].Length == 0)
+      {
+        <p>No machines have been added yet!</p>
+      }
+      <ul>
+        @foreach (Machine machine in Model["machine"])
+        {
+          <p>
+            @Html.ActionLink(@machine.Name, "Details", "Machines", new { id = @machine.MachineId })
+            <hr />
+          </p>
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

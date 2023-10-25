@@ -1,0 +1,29 @@
+@model Factory.Models.Engineer
+
+<h1>Join Our Team</h1>
+
+<div class="content_box">
+
+  <div class="form">
+    @using (Html.BeginForm())
+    {
+      <br>
+      @Html.LabelFor(m => m.FirstName)
+      @Html.TextBoxFor(m => m.FirstName)
+      <br>
+      @Html.LabelFor(m => m.LastName)
+      @Html.TextBoxFor(m => m.LastName)
+      <br>
+      @Html.LabelFor(m => m.Specialty)
+      @Html.TextBoxFor(m => m.Specialty)
+      <br>
+      <br>
+
+      <input type="submit" value="Join Our Team" class="button" />
+      <br>
+      <br>
+    }
+    <br>
+  </div>
+
+</div>
