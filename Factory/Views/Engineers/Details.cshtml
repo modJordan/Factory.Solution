@@ -4,30 +4,29 @@
 <h1>@Model.FirstName @Model.LastName Details</h1>
 <hr />
 <br />
-<h2>@Html.DisplayNameFor(m => m.Specialty): @Html.DisplayFor(m => m.Specialty)</h3>
-
-<br>
-<hr />
 <div class="content_box">
-@if (@Model.JoinEntities.Count == 0)
-{
-  <p>No Machines Assigned</p>
-}
-else
-{
-  <h2>Machines Assigned to this Engineer</h2>
-  <br />
-  @foreach (EngineerMachine join in Model.JoinEntities)
+  <h2>@Html.DisplayNameFor(m => m.Specialty): @Html.DisplayFor(m => m.Specialty)</h3>
+</div>
+<div class="content_box">
+  @if (@Model.JoinEntities.Count == 0)
   {
-    <h3>Machine Name: @join.Machine.Name</h3>
-    <p>Description: @join.Machine.Description</p>
+    <p>No Machines Assigned</p>
   }
-}
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Edit Engineer Information", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add a new Engineer", "Create")</p>
-
+  else
+  {
+    <h2>Machines Assigned to this Engineer</h2>
+    <br />
+    @foreach (EngineerMachine join in Model.JoinEntities)
+    {
+      <h3>Machine Name: @join.Machine.Name</h3>
+      <p>Description: @join.Machine.Description</p>
+    }
+  }
+  <div class="button_container">
+    <p class="button">@Html.ActionLink("Back to list", "Index")</p>
+    <p class="button">@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
+    <p class="button">@Html.ActionLink("Edit Engineer Information", "Edit", new { id = Model.EngineerId })</p>
+    <p class="button">@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+    <p class="button">@Html.ActionLink("Add a new Engineer", "Create")</p>
+  </div>
 </div>

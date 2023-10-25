@@ -3,21 +3,23 @@
 <h2>Edit</h2>
 
 <div class="content_box">
-<h4>Edit this Engineer @Html.DisplayFor(m => m.FirstName) @Html.DisplayFor(m => m.LastName)</h4>
+  <h4 class="bold">Edit this Engineer @Html.DisplayFor(m => m.FirstName) @Html.DisplayFor(m => m.LastName)</h4>
 
-@using (@Html.BeginForm())
-{
-  @Html.HiddenFor(m => m.EngineerId)
+  @using (@Html.BeginForm())
+  {
+    @Html.HiddenFor(m => m.EngineerId)
 
-  @Html.LabelFor(m => m.FirstName)
-  @Html.EditorFor(m => m.FirstName)
+    @Html.LabelFor(m => m.FirstName)
+    @Html.EditorFor(m => m.FirstName)
+    <br>
 
-  @Html.LabelFor(m => m.LastName)
-  @Html.EditorFor(m => m.LastName)
-
-  @Html.LabelFor(m => m.Specialty)
-  @Html.EditorFor(m => m.Specialty)
-
-  <input type="submit" value="Save" class="button"/>
-}
+    @Html.LabelFor(m => m.LastName)
+    @Html.EditorFor(m => m.LastName)
+    <br>
+    @Html.LabelFor(m => m.Specialty)
+    @Html.EditorFor(m => m.Specialty)
+    <br>
+    <input type="submit" value="Save" class="button" />
+  }
+  <br>
 </div>

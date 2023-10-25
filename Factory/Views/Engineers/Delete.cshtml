@@ -1,13 +1,18 @@
 @model Factory.Models.Engineer
 
+<br>
+<br>
+<br>
 <div class="content_box">
-<h2>Are you sure you want to delete this engineer?</h2>
+  <h2>Are you sure you want to delete this engineer?</h2>
 
-@Html.DisplayFor(model => model.FirstName): @Model.FirstName<br />
-@Html.DisplayFor(model => model.LastName): @Model.LastName<br />
+  @Html.DisplayFor(model => model.FirstName): @Model.FirstName<br />
+  @Html.DisplayFor(model => model.LastName): @Model.LastName<br />
 
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" class="button"/>
-}
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" class="button" />
+
+  }
+  <br>
 </div>
