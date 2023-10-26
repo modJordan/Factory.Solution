@@ -25,12 +25,9 @@ Dr. Sillystringz's Factory Management Application enables the factory manager to
 - Navigate to the Factory.Solution directory in your terminal.
 
 <details>
-<summary>Recreate the database using the jordan_kennedy.sql file:</summary>
+<summary>Set up the required database:</summary>
 
-1. Open your preferred SQL platform (e.g., MySQL Workbench, SQL Server Management Studio).
-2. Create a new database named factorydb.
-3. Import the jordan_kennedy.sql file into this database to set up the tables and initial data.
-4. Create an appsettings.json file in the Factory.Solution/Factory directory with the following content (adjust the connection string as needed based on your SQL setup):
+1. Create an `appsettings.json` file in the `Factory.Solution/Factory` directory with the following content (adjust the connection string as needed based on your SQL setup):
 
 ```json
 {
@@ -38,16 +35,17 @@ Dr. Sillystringz's Factory Management Application enables the factory manager to
     "DefaultConnection": "Server=localhost;Port=3306;database=factorydb;uid=YOUR_USERNAME;pwd=YOUR_PASSWORD;"
   }
 }
+
 ```
 Replace YOUR_USERNAME and YOUR_PASSWORD with your SQL server's username and password.
 
 </details>
 <br>
 
-- Run the command dotnet restore to install necessary packages.
-- Run the command dotnet build to compile the application.
-- Run dotnet run to start the server and application.
-- Visit localhost:5000 in your browser to access the Dr. Sillystringz's Factory Management Application.
+- Run the command ```dotnet restore``` to install necessary packages.
+- Run the command ```dotnet build``` to compile the application.
+- Run ```dotnet run``` to start the server and application.
+- Visit ```localhost:5000``` in your browser to access the Dr. Sillystringz's Factory Management Application.
 - Follow on-screen prompts to manage engineers and their associated machines.
 
 ## User Stories
