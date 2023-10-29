@@ -24,7 +24,7 @@
         <p>Specialty: @join.Engineer.Specialty</p>
         <br />
 
-        @using (Html.BeginForm("Index", "Engineer"))
+        @using (Html.BeginForm("DeleteJoin", "Engineer", FormMethod.Post))
         {
           @Html.Hidden("joinId", @join.EngineerMachineId)
           <input class="button" type="submit" value="Delete" />
