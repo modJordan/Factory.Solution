@@ -20,11 +20,17 @@
     {
       <h3>Machine Name: @join.Machine.Name</h3>
       <p>Description: @join.Machine.Description</p>
+      @using (Html.BeginForm("Index", "Machine"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input class="button" type="submit" value="Delete" />
+      }
     }
+
   }
   <div class="button_container">
     <p class="button">@Html.ActionLink("Back to list", "Index")</p>
-    <p class="button">@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
+    <p class="button">@Html.ActionLink("Add a Machine", "AddMachine", "Engineers", new { id = Model.EngineerId }, null)</p>
     <p class="button">@Html.ActionLink("Edit Engineer Information", "Edit", new { id = Model.EngineerId })</p>
     <p class="button">@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
     <p class="button">@Html.ActionLink("Add a new Engineer", "Create")</p>

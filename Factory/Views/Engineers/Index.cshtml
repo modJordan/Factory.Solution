@@ -1,16 +1,25 @@
 @using Factory.Models
 
-<br/>
-<br/>
-<br/>
+<br />
+<br />
+<br />
 <div class="title">All Engineers</div>
 
 <div class="content_box">
-<div class="statement">
+  <div class="statement">
     @foreach (var engineer in Model)
     {
-      <li class="bold">@Html.ActionLink($"{engineer.FirstName} {engineer.LastName}", "Details", new { id = engineer.EngineerId }) </li>
-      
+      <li class="bold">@Html.ActionLink($"{engineer.FirstName} {engineer.LastName}", "Details", new
+          {
+            id =
+      engineer.EngineerId
+          }) </li>
+
     }
-</div>
+
+    <br />
+    <p class="button">@Html.ActionLink("Assign an Engineer to a Machine", "AddMachine")</p>
+    <p class="button">@Html.ActionLink("Add an Engineer", "Create")</p>
+    <p class="button">@Html.ActionLink("Return to Home", "Index", "Home")</p>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 @model Factory.Models.Engineer
+@using System.Collections.Generic;
 
 <h1>Join Our Team</h1>
 
@@ -17,12 +18,18 @@
       @Html.LabelFor(m => m.Specialty)
       @Html.TextBoxFor(m => m.Specialty)
       <br>
+      @Html.HiddenFor(model => model.EngineerId)
+
+      @Html.Label("Select Machine")
+      @Html.DropDownList("MachineId", (SelectList)ViewBag.MachineId, "Select a Machine")
+      <br>
       <br>
 
       <input type="submit" value="Join Our Team" class="button" />
       <br>
       <br>
     }
+    
     <br>
   </div>
 
